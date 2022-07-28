@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+            body {
+        font-family: "Lato", sans-serif;
+        transition: background-color 0.5s;
+      }
+
+      .sidenav {
+        height: 60%;
+        width: 0;
+        position: fixed;
+        /* z-index: 1; */
+        top: 0;
+        left: 0;
+        background-color: rgb(122, 89, 255);
+        overflow-x: hidden;
+        transition: 0.5s;
+        padding-top: 5px;
+        border-radius: 0px 0px 20px 0px;
+      }
+
+      .sidenav a {
+        padding: 8px 8px 8px 32px;
+        text-decoration: none;
+        font-size: 25px;
+        color: #ffffff;
+        display: block;
+        transition: 0.3s;
+        margin: 20px 0px 20px 0px;
+      }
+
+      .sidenav a:hover {
+        color: rgb(215, 204, 255);
+      }
+
+      #main a {
+        align-content: center;
+        margin: 10px 0px 10px 0px;
+        text-decoration: none;
+        font-size: 25px;
+        color: #818181;
+      }
+
+      .sidenav .closebtn {
+        position: absolute;
+        top: 0;
+        right: 25px;
+        font-size: 36px;
+        margin-left: 50px;
+      }
+
+      #main {
+        transition: margin-left 0.5s;
+        margin-bottom: 50px;
+      }
+
+      #mainOpen{
+        margin-left: 5px;
+      }
+
+      @media screen and (max-height: 450px) {
+        .sidenav {
+          padding-top: 15px;
+        }
+
+        .sidenav a {
+          font-size: 18px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="mySidenav" class="sidenav">
+      <span  id="mainOpen" style="font-size: 30px; cursor: pointer" onclick="closeNav()"
+        >&#9776;</span>
+      <!-- <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a> -->
+      <a href="#">About</a>
+      <a href="#">Services</a>
+      <a href="#">Clients</a>
+      <a href="#">Contact</a>
+    </div>
+
+    <div id="main">
+      <span style="font-size: 30px; cursor: pointer" onclick="openNav()">&#9776;</span><br><br>
+      <a href="#">🏭</a><br><br>
+      <a href="#">🌐</a><br><br>
+      <a href="#">🤵</a><br><br>
+      <a href="#">📞</a><br><br>
+    </div>
+    <script>
+            function openNav() {
+                document.getElementById("mySidenav").style.width = "150px";
+                document.getElementById("main").style.marginLeft = "250px";
+                document.getElementById("main").style.display = "none";
+
+              }
+
+              function closeNav() {
+                document.getElementById("mySidenav").style.width = "0";
+                document.getElementById("main").style.marginLeft = "0";
+                document.getElementById("main").style.display = "block";
+
+                document.body.style.backgroundColor = "white";
+              }
+    </script>
+  </body>
+</html>
